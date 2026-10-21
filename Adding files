@@ -3,6 +3,8 @@ url <- "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extd
 filename <- "femaleMiceWeights.csv"
 download(url, destfile = filename)
 
-dat <- read.csv(filename)
+install.packages("downloader")
+library(downloader)
+url <- "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleMiceWeights.csv"
+dat <- read.csv(url)
 head(dat)
-C:\Users\wolfy\Downloads\femaleMiceWeights.csv 
