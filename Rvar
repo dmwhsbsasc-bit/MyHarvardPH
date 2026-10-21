@@ -1,0 +1,71 @@
+# this is the intro to Harvard PH525X
+#FYi run the code in the terminal it will not run from the text editor/some code may but I do not have the knowledge yet to the why
+dat <- read.csv("femaleMiceWeights.csv")
+head(dat)
+# The Jackson Lab and randomly assigning either chow or high fat (hf) diet. After several weeks, the scientists weighed each mice and obtained this data (head just shows us the first 6 rows):
+#View(dat)
+# shows the entire dataset 
+#So are the hf mice heavier? Mouse 24 at 20.73 grams is one the lightest mice, while Mouse 21 at 34.02 grams is one of the heaviest. Both are on the hf diet. Just from looking at the data, we see there is variability. Claims such as the one above usually refer to the averages. So let’s look at the average of each group:
+library(dplyr)
+control<-filter(dat, Diet == "chow" ) %>% 
+select(Bodyweight) %>% unlist
+# both of these functions  take to colum remove it from the data frame or tibble
+treatment <- filter(dat, Diet =="hf") %>%
+select(Bodyweight) %>% unlist
+ # when than take the mean of each to answer the question: “Body weight was higher in mice fed the high-fat diet already after the first week, due to higher dietary intake in combination with lower metabolic efficiency.”
+mean(treatment)
+#[1] 26.83417
+mean(control)
+#[1] 23.81333
+
+# outputs for treatment
+# Bodyweight1  Bodyweight2  Bodyweight3  Bodyweight4  Bodyweight5  Bodyweight6 
+#       25.71        26.37        22.80        25.34        24.97        28.14 
+ #Bodyweight7  Bodyweight8  Bodyweight9 Bodyweight10 Bodyweight11 Bodyweight12 
+ #      29.58        30.92        34.02        21.90        31.53        20.73 
+#
+#
+# Bodyweight1  Bodyweight2  Bodyweight3  Bodyweight4  Bodyweight5  Bodyweight6 
+#       21.51        28.14        24.04        23.45        23.68        19.79 
+ #Bodyweight7  Bodyweight8  Bodyweight9 Bodyweight10 Bodyweight11 Bodyweight12 
+ #      28.40        20.98        22.51        20.10        26.91        26.25 
+#
+obsdiff <- mean(treatment)-mean(control)
+print(obsdiff)
+#3.020833 this estimate effect size
+
+
+#now we need a P-value and cofidence interval
+ #we do not have an acctuall population in the next exmples just practice 
+
+library(downloader)
+url <- "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleControlsPopulation.csv"
+filename <- "femaleControlsPopulation.csv"
+if (!file.exists(filename)) download(url,destfile=filename)
+population <- read.csv(filename)
+population <- unlist(population) # turn it into a numeric
+
+
+# control <- sample(population,12)   
+# mean(control)
+#[1] 24.47333
+# control <- sample(population,12)
+# mean(control)
+#[1] 25.13917
+# control <- sample(population,12)
+# mean(control)
+#[1] 25.5025
+ 
+ #Shows that the mean will fluctuate
+
+#The Null hypthesis 
+
+
+
+#To support this claim they provide the following in the results section:
+
+#“Already during the first week after introduction of high-fat diet, body weight increased significantly more in the high-fat diet-fed mice (+
+# 1.6 ±
+# 0.1 g) than in the normal diet-fed mice (+
+# 0.2 ±
+ #0.1 g; P < 0.001).”
