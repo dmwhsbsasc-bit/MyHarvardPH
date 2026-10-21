@@ -1,0 +1,82 @@
+#harvardx
+
+#sqrt() squares stuff
+#getwd() find the directory
+#list all the objects in your working space ls()
+#list.files() all the files I am working in
+#args() fucntion tells you what the arguement is
+#setwd() sets the working directory to somethin
+#create.file() creates a file within your directory
+#file.exist checks for exisitng file
+#file.info() checks the info of a file
+# use $ to grab specific items of a file file.info("mytest")$mode
+#to rename a file the argument goes as from,to file.name from(my.test) to(my.test)= file.name("mytest.R","mytest2.R")
+#copy.file(,)copies the file and renames it
+
+#sequencing numbers
+#:  gives intergers form a,b seq() does the same thing but with more control
+#length() determines length of sequences
+# if we dont know the length to generate intergers 1 to n  where in represents 
+#the length of the vector= new vector witht the same length as another vector
+# 1:length(known_vector)
+#same thing ^ but different way seq(along.with = known_vecotr)
+# R built in function seq_along()
+#rep() replicates a vector
+#rep(0,times =40) makes 40 zeros
+#rep(c(0,1,2),times = 10) replicates the seq 10 times
+#can use the "each" to replicate each item x amount of times rep(c(0,1,2), each= 10)
+
+#vectors
+#numeric Vector vect<-c(5,4,2)
+#get the reuslts of are vector as logical or not and saves as a varriable  tf <-vect >,=,<,!=,=<,>= 1
+# character vector ("Yup","yeah""yeat")
+#collapse "" creates spaces or not " "
+#to adding words into a function lets say we have varrible My_name, and my_char with a string stored in it   My_name <- c(my_char, "New string")
+#sep separtates things
+#combine a integer with a vecotor 1:3,c("X","Y","Z"), sep=")
+
+#Missing Values
+
+
+
+
+
+
+
+
+
+
+
+
+#subsetting Vectors
+
+
+
+
+
+
+
+
+#Matrics and Data Frames
+
+
+
+
+
+#logic
+
+
+
+
+
+
+
+
+#functions
+
+
+
+
+
+
+
