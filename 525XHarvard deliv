@@ -1,6 +1,6 @@
 # This is my assigment two FDR toy correction problem set  from the Harvard9H525X BOOK
 
-
+#https://genomicsclass.github.io/book/pages/multiple_testing_exercises.html
 
 # With these exercises we hope to help you further grasp the concept that p-values are random variables and start laying the ground work for the development of procedures that control error rates. The calculations to compute error rates require us to understand the random behavior of p-values.
 
